@@ -1,6 +1,6 @@
 const controller=require('./../controller');
 
-module.exports=new class{
+module.exports=new (class extends controller{
 
     async register(req,res){
         res.send('register')
@@ -9,4 +9,4 @@ module.exports=new class{
     async login(req,res){
         res.send('login ')
     };
-}();
+})();

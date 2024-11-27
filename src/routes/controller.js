@@ -13,7 +13,7 @@ this.User=User;
 }
 
 
-validationBody(re,res){
+validationBody(req,res){
    const result= validationResult(req);
     if(!result.isEmpty()){
         const error=result.array();

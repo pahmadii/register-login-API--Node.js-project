@@ -6,12 +6,14 @@ const validator=require('./validator');
 router.post(
     '/register',
     validator.registerValidator(),
+    controller.validator,
     controller.register,
 );
 
 router.post(
     '/login',
     validator.loginValidator(),
+    controller.validator,
     controller.login,
 );
 

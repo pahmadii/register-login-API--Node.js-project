@@ -1,5 +1,6 @@
+require('./db/connect');
+
 const express = require('express');
-const mongoose = require('mongoose');
 const router=require('./src/routes/index');
 const app = express();
 

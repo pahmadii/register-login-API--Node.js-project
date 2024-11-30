@@ -34,12 +34,6 @@ process.on('unhandledRejection',(ex)=>{
 
 winston.add(new winston.transports.File({filename: 'logfile.log'}));
 
-//const p=Promise.reject(new Error('sth faild outside promis'));
-//p.then(()=>console.log('done'))
-
-//throw new Error('sth faild');
-
-
 
 
 app.use('/api',router);

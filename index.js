@@ -1,38 +1,13 @@
-require('express-async-errors');
 const express = require('express');
 const app = express();
 const connectDB=require('./db/connect');
-
 const router=require('./src/routes/index');
-const winston=require('winston');
-
-
 require('dotenv').config();
 
 
 
-app.use(express.json());
-app.use(express.urlencoded({extended: true}));
-app.use(express.static('public'));
-
-
-
-process.on('uncaughtException',(ex)=>{
- console.log('uncaught exception');
- winston.error(ex.message,ex);
- process.exit(1);
-
-});
-
-process.on('unhandledRejection',(ex)=>{
-    console.log('unhandle exception');
-    winston.error(ex.message,ex);
-    process.exit(1);
-
-   });
-
-
-winston.add(new winston.transports.File({filename: 'logfile.log'}));
+require('./startup/login')();
+require('./startup/config')(app,express);
 
 
 

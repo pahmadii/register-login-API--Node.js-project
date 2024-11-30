@@ -15,7 +15,23 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(express.static('public'));
 
+
+
+
+
+
+process.on('uncaughtException',(ex)=>{
+ console.log('uncaught exception');
+ winston.error(ex.message,ex);
+ 
+})
 winston.add(new winston.transports.File({filename: 'logfile.log'}));
+
+
+throw new Error('sth faild');
+
+
+
 
 app.use('/api',router);
 

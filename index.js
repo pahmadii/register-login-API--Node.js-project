@@ -4,6 +4,7 @@ const app = express();
 
 const router=require('./src/routes/index');
 const connectDB=require('./db/connect');
+const winston=require('winston');
 
 
 require('dotenv').config();
@@ -13,6 +14,8 @@ require('dotenv').config();
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(express.static('public'));
+
+winston.add(new winston.transports.File({filename: 'logfile.log'}));
 
 app.use('/api',router);
 

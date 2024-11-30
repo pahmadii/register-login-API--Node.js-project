@@ -1,9 +1,9 @@
 require('express-async-errors');
 const express = require('express');
 const app = express();
+const connectDB=require('./db/connect');
 
 const router=require('./src/routes/index');
-const connectDB=require('./db/connect');
 const winston=require('winston');
 
 

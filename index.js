@@ -17,28 +17,27 @@ app.use(express.static('public'));
 
 
 
-
-
-
 process.on('uncaughtException',(ex)=>{
  console.log('uncaught exception');
  winston.error(ex.message,ex);
- 
+ process.exit(1);
+
 });
 
 process.on('unhandledRejection',(ex)=>{
     console.log('unhandle exception');
     winston.error(ex.message,ex);
-    
+    process.exit(1);
+
    });
 
 
 winston.add(new winston.transports.File({filename: 'logfile.log'}));
 
-const p=Promise.reject(new Error('sth faild outside promis'));
-p.then(()=>console.log('done'))
+//const p=Promise.reject(new Error('sth faild outside promis'));
+//p.then(()=>console.log('done'))
 
-throw new Error('sth faild');
+//throw new Error('sth faild');
 
 
 

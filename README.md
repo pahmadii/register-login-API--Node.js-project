@@ -21,13 +21,25 @@ This project is a simple API built using **Node.js** and **Express.js**. It is d
 
 Dependencies
 -auto-bind: Automatically binds methods to the class instance.
+
 -bcrypt: Hashes passwords for secure storage.
+
 -dotenv: Loads environment variables from a .env file.
+
 -express: Framework for building the API.
+
 -express-async-errors: Handles async errors in Express routes.
+
 -express-validator: Validates user inputs.
+
 -jsonwebtoken: Used for user authentication via JWT tokens.
+
 -lodash: Utility library for handling data.
+
 -mongoose: MongoDB object modeling tool.
+
 -mongoose-timestamp: Adds created and updated timestamps to Mongoose documents.
+
+
 -winston: Logging library for logging events and errors.
+
